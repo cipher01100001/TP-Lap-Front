@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Videos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen p-6">
 
-    <h1>Videos</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Videos</h1>
 
-    <table id="videos_table">
-        <thead>
-            <td>Code.</td>
+    <table id="videos_table" class="w-full max-w-3xl bg-white shadow-md rounded-lg overflow-hidden">
+        <thead class="border-b border-blue-300 bg-blue-50">
+            <td class="py-3 px-6 text-left">Code.</td>
         </thead>
     </table>
 
-    <a href="../index.html">
+    <a href="../index.html" class="mt-6 inline-block bg-blue-500 text-white font-medium py-2 px-4 rounded hover:bg-blue-600 transition">
         Home
     </a>
 </body>

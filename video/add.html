@@ -4,22 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Add video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center py-10">
 
-    <h2>Add video</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Add video</h2>
 
-    <form>
-        <label for="code">Code:</label><br>
-        <input type="text" id="code" name="code" value=""><br>
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" value=""><br><br>
+    <form class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 space-y-4">
+        <div>
+            <label for="code" class="block text-gray-700 font-medium">Code:</label>
+            <input type="text" id="code" name="code" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+        </div>
 
-        <input type="submit" value="Save" class="btn btn-primary" onclick="add();">
+        <div>
+            <label for="title" class="block text-gray-700 font-medium">Title:</label>
+            <input type="text" id="title" name="title" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+        </div>
+
+        <div>
+            <label for="description" class="block text-gray-700 font-medium">Description:</label>
+            <input type="text" id="description" name="description" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+        </div>
+
+        <div>
+            <label for="duration" class="block text-gray-700 font-medium">Duration:</label>
+            <input type="text" id="duration" name="duration" class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200">
+        </div>
+
+        <div>
+            <input type="submit" value="Save" class="w-full bg-blue-500 text-white font-medium py-2 rounded-md hover:bg-blue-600 transition cursor-pointer" onclick="add();">
+        </div>
     </form>
 
-    <a href="../index.html" class="link-secondary">Return to Home</a>
+    <a href="../index.html" class="mt-4 text-blue-500 hover:underline">Return to Home</a>
 
 </body>
 
@@ -37,10 +55,14 @@
 
         var code = document.getElementById("code");
         var title = document.getElementById("title");
+        var description = document.getElementById("description");
+        var duration = document.getElementById("duration");
 
         var newVideo = {
             "code": code.value,
-            "title": title.value
+            "title": title.value,
+            "description": description.value,
+            "duration": duration.value
         }
 
         console.log("Adding video:" + JSON.stringify(newVideo));
